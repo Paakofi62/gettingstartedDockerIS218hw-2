@@ -15,8 +15,11 @@ class MyTestCase(unittest.TestCase):
         result = self.calculator.Sum(1, 2)
         self.assertEqual(3, result)
 
-    def test_calculator_return_difference(self):
+    def test_calculator_access_sum_result(self):
+        self.calculator.Sum(1, 2)
+        self.assertEqual(3, self.calculator.Result)
 
+    def test_calculator_return_difference(self):
         result = self.calculator.Difference(1, 2)
         self.assertEqual(-1, result)
 
@@ -24,8 +27,44 @@ class MyTestCase(unittest.TestCase):
         self.calculator.Difference(1, 2)
         self.assertEqual(-1, self.calculator.Result)
 
-    def test_calculator_access_sum_result(self):
-        self.calculator.Sum(1, 2)
+    def test_calculator_return_product(self):
+        result = self.calculator.Multiplication(1, 2)
+        self.assertEqual(2, result)
+
+    def test_calculator_access_product_result(self):
+        self.calculator.Multiplication(1, 2)
+        self.assertEqual(2, self.calculator.Result)
+
+    def test_calculator_return_quotient(self):
+        result = self.calculator.Division(4, 2)
+        self.assertEqual(2, result)
+
+    def test_calculator_access_quotient_result(self):
+        self.calculator.Division(4, 2)
+        self.assertEqual(2, self.calculator.Result)
+
+    def test_calculator_return_power(self):
+        result = self.calculator.Exponential(3, 3)
+        self.assertEqual(9, result)
+
+    def test_calculator_access_power_result(self):
+        self.calculator.Exponential(3, 3)
+        self.assertEqual(9, self.calculator.Result)
+
+    def test_calculator_return_root(self):
+        result = self.calculator.SqaureRoot(36, 2)
+        self.assertEqual(6, result)
+
+    def test_calculator_access_root_result(self):
+        self.calculator.SqaureRoot(36, 2)
+        self.assertEqual(6, self.calculator.Result)
+
+    def test_calculator_return_logarithm(self):
+        self.calculator.Logarithm(64, 4)
+        self.assertEqual(3, self.calculator.Result)
+
+    def test_calculator_access_result(self):
+        self.calculator.Logarithm(64, 4)
         self.assertEqual(3, self.calculator.Result)
 
     def test_multiple_calculators(self):

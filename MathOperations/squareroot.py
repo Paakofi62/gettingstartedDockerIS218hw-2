@@ -1,5 +1,5 @@
-class squareRoot:
+class SquareRoot:
 
     @staticmethod
-    def squareRoot(radicand, degree):
+    def squareroot(radicand, degree):
         return (radicand **(1/degree))
