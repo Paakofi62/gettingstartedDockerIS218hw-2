@@ -1,5 +1,6 @@
+import math
 class Logarithm:
 
     @staticmethod
-    def difference(minuend, subtraend):
-        return minuend - subtraend
+    def logarithm (antilog, base):
+        return math.log(antilog, base)
