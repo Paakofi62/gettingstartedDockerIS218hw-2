@@ -28,7 +28,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(2, Division.division(4, 2))
 
     def test_MathOperations_exponential(self):
-        self.assertEqual(9, Exponential.exponential(3, 3))
+        self.assertEqual(27, Exponential.exponential(3, 3))
 
     def test_MathOperations_root(self):
         self.assertEqual(6, SquareRoot.squareroot(36, 2))

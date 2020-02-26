@@ -45,11 +45,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_calculator_return_power(self):
         result = self.calculator.Exponential(3, 3)
-        self.assertEqual(9, result)
+        self.assertEqual(27, result)
 
     def test_calculator_access_power_result(self):
         self.calculator.Exponential(3, 3)
-        self.assertEqual(9, self.calculator.Result)
+        self.assertEqual(27, self.calculator.Result)
 
     def test_calculator_return_root(self):
         result = self.calculator.SqaureRoot(36, 2)
