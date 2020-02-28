@@ -3,7 +3,7 @@ from MathOperations.division import Division
 
 
 class Mean:
-
+    @staticmethod
     def mean(data):
         num_values = len(data)
         total = 0
