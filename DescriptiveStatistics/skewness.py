@@ -10,12 +10,12 @@ class Skewness:
 
     @staticmethod
     def modeskewness(data):
-        n = (Subtraction(Mean, Mode))
-        nn = Division(n, Stddev)
+        n = (Subtraction.difference(Mean, Mode))
+        nn = Division.division(n, Stddev)
         return nn
 
     @staticmethod
     def medianskewness(data):
-        ni = (Subtraction(Mean, Median))
-        nii = Division(ni, Stddev)
+        ni = (Subtraction.difference(Mean, Median))
+        nii = Division.division(ni, Stddev)
         return nii
