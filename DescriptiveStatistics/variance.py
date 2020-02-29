@@ -1,10 +1,8 @@
-from MathOperations.exponential import Exponential
-from DescriptiveStatistics.stddev import Stddev
+import numpy
 
 
 class Variance:
 
     @staticmethod
     def variance(data):
-        sampv = Exponential(Stddev, 2)
-        return sampv
+        return numpy.var(data)
