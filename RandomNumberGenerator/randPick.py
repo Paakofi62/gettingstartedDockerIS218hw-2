@@ -1,5 +1,6 @@
 import random
 
+
 class RandPick:
     @staticmethod
     def randPick(data):
@@ -18,6 +19,7 @@ class RandPick:
         return dlist
 
     @staticmethod
-    def ranPickListSeed(seed, nums, data):
+    def randPickListSeed(seed, nums, data):
         random.seed(seed)
         return RandPick.randPickList(nums, data)
+

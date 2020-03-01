@@ -1,7 +1,9 @@
 import unittest
 import random
 from DescriptiveStatistics.mean import Mean
+from DescriptiveStatistics.meanDeviation import MeanDeviation
 from DescriptiveStatistics.mode import Mode
+from DescriptiveStatistics.skewness import Skewness
 from DescriptiveStatistics.stddev import Stddev
 from DescriptiveStatistics.variance import Variance
 from DescriptiveStatistics.quartiles import Quartiles
@@ -40,7 +42,17 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(4.25, Quartiles.thirdquartile(self.test))
 
     def test_zsc(self):
-        self.assertEqual(0, Zsc.zsc(self.test))
+        zsc = Zsc.zsc(2, self.test)
+        self.assertEqual(zsc, -1.3228756555322954)
+
+    def test_meanDeviation(self):
+        self.assertEqual(1.25, MeanDeviation.meanDeviation(self.test))
+
+    def test_modeskewness(self):
+        self.assertEqual(.6614378277661477, Skewness.modeskewness(self.test))
+
+    def test_medianskewness(self):
+        self.assertEqual(.33071891388307384, Skewness.medianskewness(self.test))
 
 
 if __name__ == '__main__':

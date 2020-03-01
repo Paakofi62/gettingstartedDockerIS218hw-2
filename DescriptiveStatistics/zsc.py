@@ -1,12 +1,12 @@
 from DescriptiveStatistics.mean import Mean
 from DescriptiveStatistics.stddev import Stddev
-from MathOperations.subtraction import Subtraction
-from MathOperations.division import Division
+from RandomNumberGenerator.randPick import RandPick
 
 
 class Zsc:
     @staticmethod
-    def zsc(data):
-        z = Subtraction.difference(data, Mean.mean(data))
-        zs = Division.division(z, Stddev.stddev(data))
-        return zs
+    def zsc(seed, data):
+        X = RandPick.randPickSeed(seed, data)
+        mean = Mean.mean(data)
+        stddev = Stddev.stddev(data)
+        return (X - mean) / stddev
