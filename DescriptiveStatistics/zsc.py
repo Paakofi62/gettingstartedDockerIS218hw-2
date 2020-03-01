@@ -7,6 +7,6 @@ from MathOperations.division import Division
 class Zsc:
     @staticmethod
     def zsc(data):
-        z = Subtraction.difference(data, Mean)
-        zs = Division.division(z, Stddev)
+        z = Subtraction.difference(data, Mean.mean(data))
+        zs = Division.division(z, Stddev.stddev(data))
         return zs
