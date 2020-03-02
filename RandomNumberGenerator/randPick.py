@@ -22,4 +22,3 @@ class RandPick:
     def randPickListSeed(seed, nums, data):
         random.seed(seed)
         return RandPick.randPickList(nums, data)
-

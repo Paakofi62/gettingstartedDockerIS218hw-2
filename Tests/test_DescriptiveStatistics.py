@@ -1,8 +1,12 @@
 import unittest
 import random
+
+from DescriptiveStatistics.covariance import Covariance
 from DescriptiveStatistics.mean import Mean
 from DescriptiveStatistics.meanDeviation import MeanDeviation
 from DescriptiveStatistics.mode import Mode
+from DescriptiveStatistics.populationcorrelation import PopulationCorrelation
+from DescriptiveStatistics.samplecorrelation import SampleCorrelation
 from DescriptiveStatistics.skewness import Skewness
 from DescriptiveStatistics.stddev import Stddev
 from DescriptiveStatistics.variance import Variance
@@ -15,6 +19,7 @@ class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.test = [1, 2, 2, 2, 3, 4, 5, 5]
+        self.test1 = [1, 2, 3, 3, 4, 5, 7, 8]
         random.seed(2)
 
     def test_Mean(self):
@@ -53,6 +58,18 @@ class MyTestCase(unittest.TestCase):
 
     def test_medianskewness(self):
         self.assertEqual(.33071891388307384, Skewness.medianskewness(self.test))
+
+    def test_covariance(self):
+        covariance = Covariance.covariance(self.test, self.test1)
+        self.assertEqual(covariance, 3.571428571428571)
+
+    def test_sampleCorrelation(self):
+        result = SampleCorrelation.samplecorrelation(3, self.test, self.test1)
+        self.assertEqual(result, -0.5940762068478092)
+
+    def test_populationcorrelation(self):
+        result = PopulationCorrelation.populationcorrelation(self.test, self.test1)
+        self.assertEqual(result, 0.9775773587572187)
 
 
 if __name__ == '__main__':
