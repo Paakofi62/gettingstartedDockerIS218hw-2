@@ -1,6 +1,7 @@
 import unittest
 import random
 
+from DescriptiveStatistics.populationProportion import PopulationProportion
 from DescriptiveStatistics.covariance import Covariance
 from DescriptiveStatistics.mean import Mean
 from DescriptiveStatistics.meanDeviation import MeanDeviation
@@ -70,6 +71,10 @@ class MyTestCase(unittest.TestCase):
     def test_populationcorrelation(self):
         result = PopulationCorrelation.populationcorrelation(self.test, self.test1)
         self.assertEqual(result, 0.9775773587572187)
+
+    def test_populationProportion(self):
+        result = PopulationProportion.populationPorportion(data=self.test1, nums=6, seeds=4)
+        self.assertEqual(result, 0.75)
 
 
 if __name__ == '__main__':
