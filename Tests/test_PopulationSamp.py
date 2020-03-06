@@ -4,6 +4,10 @@ from PopulationSampFunctionspy.marginOfError import MarginOfError
 from PopulationSampFunctionspy.sysSamp import SysSamp
 from PopulationSampFunctionspy.confidenceIntervalPopulation import ConfidenceIntervalPopulation
 from PopulationSampFunctionspy.simpleRandSamp import SimpleRandSamp
+from PopulationSampFunctionspy.cochran import Cochran
+from PopulationSampFunctionspy.confidenceIntervalSample import ConfidenceIntervalSample
+from PopulationSampFunctionspy.unknownPopulationStdev import UnknownPopulationStdev
+from PopulationSampFunctionspy.knownSampleSize import KnownSampleSize
 
 
 class MyTestCase(unittest.TestCase):
@@ -20,6 +24,18 @@ class MyTestCase(unittest.TestCase):
         result = ConfidenceIntervalPopulation.confidenceIntervalPopulation(confidence=.90, data=self.test)
         self.assertEqual(result, (1.9873051382212144, 4.012694861778786))
 
+    def test_confidenceIntervalSample(self):
+        result = ConfidenceIntervalSample.confidenceIntervalSample(confidence=.90, seed=1, nums=5, data=self.test1)
+        self.assertEqual(result, (1.426075892772384, 6.173924107227616))
+
+    def test_unknownPopulationStdev(self):
+        result = UnknownPopulationStdev.unknownPopulationStdev(seed=1, data=self.test1, percent=.50)
+        self.assertEqual(result, 0.04281345565749235)
+
+    def test_knownSampleSize(self):
+        result = KnownSampleSize.knownSamplesize(seed=4, data=self.test1)
+        self.assertEqual(result, 1)
+
     def test_simpleRandSamp(self):
         result = SimpleRandSamp.randPickList(nums=3, data=self.test1)
         self.assertEqual(result, [1, 2, 2])
@@ -27,6 +43,14 @@ class MyTestCase(unittest.TestCase):
     def test_sysSamp(self):
         result = SysSamp.randPickListSeed(seed=1, nums=4, data=self.test1)
         self.assertEqual(result, [3, 2, 4, 2])
+
+    def test_knownSamplesize(self):
+        result = KnownSampleSize.knownSamplesize(data=self.test1, seed=1)
+        self.assertEqual(result, 1)
+
+    def test_cochran(self):
+        result = Cochran.cochran(data=self.test1,seeds=1, nums=4)
+        self.assertEqual(result, 0)
 
 
 if __name__ == '__main__':

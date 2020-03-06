@@ -1,11 +1,9 @@
-from scipy.stats import sem
-from scipy.stats import t
-from PopulationSampFunctionspy.ConfidenceIntervalPopulation import ConfidenceIntervalPopulation
-from PopulationSamples.RandomSample import RandomSample
+from PopulationSampFunctionspy.confidenceIntervalPopulation import ConfidenceIntervalPopulation
+from PopulationSampFunctionspy.simpleRandSamp import SimpleRandSamp
 
-class ConfidenceIntervalSample():
+
+class ConfidenceIntervalSample:
     @staticmethod
-    def confidenceInterval(confidence, data, seed, high):
-        data = RandomSample.random_sample(seed, data, high)
-        cip = ConfidenceIntervalPopulation.confidence_interval(confidence, data)
-        return cip
+    def confidenceIntervalSample(confidence, seed, nums, data):
+        samp = SimpleRandSamp.randPickListSeed(seed, nums, data)
+        return ConfidenceIntervalPopulation.confidenceIntervalPopulation(confidence, samp)
