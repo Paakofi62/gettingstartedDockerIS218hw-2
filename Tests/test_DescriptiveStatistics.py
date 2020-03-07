@@ -65,8 +65,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(covariance, 3.571428571428571)
 
     def test_sampleCorrelation(self):
-        result = SampleCorrelation.samplecorrelation(3, self.test, self.test1)
-        self.assertEqual(result, -0.5940762068478092)
+        self.assertEqual(0.9630868246861537, SampleCorrelation.samplecorrelation(2, 5, self.test, self.test1))
 
     def test_populationcorrelation(self):
         result = PopulationCorrelation.populationcorrelation(self.test, self.test1)

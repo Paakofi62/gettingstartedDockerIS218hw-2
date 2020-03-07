@@ -5,11 +5,8 @@ from DescriptiveStatistics.covariance import Covariance
 
 class SampleCorrelation:
     @staticmethod
-    def samplecorrelation(Seed, data1, data2):
-        sampleData1 = RandPick.randPickListSeed(Seed, data1, 5)
-        sampleData2 = RandPick.randPickListSeed(Seed, data2, 5)
+    def samplecorrelation(seed, sample_size, data1, data2):
+        dataA = RandPick.randPickListSeed(seed, sample_size, data1)
+        dataB = RandPick.randPickListSeed(seed, sample_size, data2)
 
-        cov = Covariance.covariance(sampleData1, sampleData2)
-        stdDev1 = Stddev.stddev(sampleData1)
-        stdDev2 = Stddev.stddev(sampleData2)
-        return cov / (stdDev1 * stdDev2)
+        return Covariance.covariance(dataA, dataB) / (Stddev.stddev(dataA) * Stddev.stddev(dataB))
