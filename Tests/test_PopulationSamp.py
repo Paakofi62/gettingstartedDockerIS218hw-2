@@ -49,8 +49,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, 1)
 
     def test_cochran(self):
-        result = Cochran.cochran(data=self.test1, seed=1, nums=4)
-        self.assertEqual(result, 0)
+        result = Cochran.cochran(data=self.test1, seeds=1, nums=4)
+        self.assertEqual(result, 0.04281345565749235)
 
 
 if __name__ == '__main__':
