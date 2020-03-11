@@ -44,8 +44,8 @@ class MyTestCase(unittest.TestCase):
         x = None
         if len(temp) == 4:
             for item in temp:
-               if item in self.test and type(item) == int:
-                   x = True
+                if item in self.test and type(item) == int:
+                    x = True
         self.assertEqual(True, x)
 
     def test_randPickListSeed(self):
